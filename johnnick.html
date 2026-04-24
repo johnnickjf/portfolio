@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johnnick Landim — Desenvolvedor Full Stack, Fundador TrackPath</title>
+<meta name="description" content="Johnnick Landim, desenvolvedor Full Stack, fundador e CEO da TrackPath. Especialista em Python, FastAPI, AWS, backend e produto digital. Juiz de Fora, MG.">
+<meta name="keywords" content="Johnnick Landim, desenvolvedor full stack, TrackPath, marketing de afiliados, Python, FastAPI, AWS, QA, portfólio desenvolvedor, Juiz de Fora">
+<meta name="author" content="Johnnick Landim">
+<meta property="og:title" content="Johnnick Landim — Dev Full Stack & Fundador TrackPath">
+<meta property="og:description" content="Portfólio de Johnnick Landim — desenvolvedor, fundador da TrackPath e criador de soluções digitais completas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johnnick.com.br">
+<link rel="canonical" href="https://johnnick.com.br">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Johnnick Landim",
+  "jobTitle": "Desenvolvedor Full Stack & Fundador",
+  "url": "https://johnnick.com.br",
+  "sameAs": [
+    "https://www.linkedin.com/in/johnnickjf/",
+    "https://github.com/johnnickjf",
+    "https://www.instagram.com/johnnickjf/"
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --bg-elev: #111317;
+    --bg-card: rgba(22, 25, 30, 0.55);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --text: #e8eaed;
+    --text-dim: #9aa0a6;
+    --text-faint: #5f6368;
+    --accent: #00ffa3;
+    --accent-dim: rgba(0, 255, 163, 0.12);
+    --accent-glow: rgba(0, 255, 163, 0.25);
+    --radius: 14px;
+    --radius-sm: 8px;
+    --maxw: 1200px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  .container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ===== NAVBAR ===== */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .navbar.scrolled {
+    background: rgba(10, 11, 13, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: var(--border);
+    padding: 12px 0;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .logo {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .logo .dot { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px;
+    color: var(--text-dim);
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -6px; left: 0;
+    width: 0; height: 1px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover::before { width: 100%; }
+
+  .nav-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    padding: 10px 18px;
+    background: var(--accent);
+    color: #05120c;
+    border-radius: 100px;
+    font-weight: 600;
+    transition: all 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px var(--accent-glow);
+  }
+  .nav-cta .pulse {
+    width: 6px; height: 6px;
+    background: #05120c;
+    border-radius: 50%;
+    animation: pulse 1.4s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .nav-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; }
+
+  /* ===== SECTION BASICS ===== */
+  section { padding: 120px 0; position: relative; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: inline-block;
+    letter-spacing: 0.02em;
+  }
+  .section-title {
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .section-sub {
+    color: var(--text-dim);
+    font-size: 17px;
+    max-width: 640px;
+  }
+  .section-head { margin-bottom: 64px; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 80%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute;
+    top: 30%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, var(--accent-dim), transparent 60%);
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+
+  .hero-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    padding: 8px 14px;
+    border: 1px solid var(--accent-dim);
+    border-radius: 100px;
+    background: rgba(0, 255, 163, 0.04);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    letter-spacing: 0.04em;
+  }
+  .hero-badge .dot {
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 1.6s infinite;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 9vw, 120px);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin-bottom: 32px;
+    max-width: 1000px;
+  }
+  .hero-title .period { color: var(--accent); }
+  .cursor {
+    display: inline-block;
+    width: 4px;
+    height: 0.85em;
+    background: var(--accent);
+    margin-left: 6px;
+    vertical-align: text-bottom;
+    animation: blink 1s infinite;
+  }
+  @keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  .hero-sub {
+    font-size: clamp(17px, 2vw, 21px);
+    color: var(--text-dim);
+    max-width: 640px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+  .hero-sub strong { color: var(--text); font-weight: 500; }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    padding: 14px 24px;
+    border-radius: 100px;
+    transition: all 0.25s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+    background: none;
+    color: inherit;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #05120c;
+    font-weight: 600;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+  }
+  .btn-ghost {
+    border-color: var(--border-strong);
+    color: var(--text);
+  }
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+  }
+
+  .counters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    max-width: 900px;
+  }
+  .counter-num {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    line-height: 1;
+  }
+  .counter-num .plus { color: var(--accent); }
+  .counter-label {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ===== SOBRE ===== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .about-portrait {
+    aspect-ratio: 4/5;
+    border-radius: var(--radius);
+    background: linear-gradient(145deg, #16191e, #0d0f12);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(45deg, transparent 0 20px, rgba(255,255,255,0.02) 20px 21px);
+  }
+  .about-portrait .initials {
+    font-size: clamp(80px, 12vw, 140px);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #fff 40%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    z-index: 1;
+  }
+  .about-portrait .corner {
+    position: absolute;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+  }
+  .corner.tl { top: 16px; left: 16px; }
+  .corner.br { bottom: 16px; right: 16px; color: var(--accent); }
+
+  .about-badge {
+    margin-top: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .about-badge .ping {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent);
+    animation: pulse 1.6s infinite;
+  }
+
+  .about-text {
+    font-size: 17px;
+    color: var(--text-dim);
+    line-height: 1.75;
+  }
+  .about-text p + p { margin-top: 20px; }
+  .about-text strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .about-text .hl { color: var(--accent); font-weight: 500; }
+
+  /* ===== PROJETOS ===== */
+  .project-featured {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 44px;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 32px;
+    transition: border-color 0.3s;
+  }
+  .project-featured::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.6;
+  }
+  .project-featured:hover { border-color: var(--border-strong); }
+
+  .project-featured-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .pf-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    padding: 6px 12px;
+    background: var(--accent-dim);
+    border-radius: 100px;
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+  }
+  .pf-name {
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .pf-name .period { color: var(--accent); }
+  .pf-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+  }
+  .pf-desc {
+    color: var(--text-dim);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .pf-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 5px 11px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--text-dim);
+    background: rgba(255,255,255,0.02);
+  }
+  .pf-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .pf-visual {
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-sm);
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(0,0,0,0.2);
+  }
+  .terminal-bar .dot { width: 10px; height: 10px; border-radius: 50%; background: #2a2d31; }
+  .terminal-bar .title {
+    margin-left: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+  }
+  .terminal-body {
+    flex: 1;
+    padding: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    line-height: 1.8;
+    overflow: hidden;
+  }
+  .tl-line { color: var(--text-dim); }
+  .tl-line .c { color: var(--text-faint); }
+  .tl-line .k { color: var(--accent); }
+  .tl-line .s { color: #ffb86c; }
+  .tl-line .n { color: #a78bfa; }
+
+  .tl-bar-row {
+    display: flex; align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+  }
+  .tl-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  .tl-bar span {
+    display: block; height: 100%;
+    background: var(--accent);
+    border-radius: 10px;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .project-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-4px);
+  }
+  .project-card::after {
+    content: '→';
+    position: absolute;
+    top: 28px; right: 28px;
+    color: var(--text-faint);
+    transition: all 0.3s;
+    font-size: 18px;
+  }
+  .project-card:hover::after {
+    color: var(--accent);
+    transform: translate(4px, -4px);
+  }
+  .pc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    margin-bottom: 14px;
+  }
+  .pc-name {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .pc-url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .pc-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  .pc-stack {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .pc-stack .pill { font-size: 11px; padding: 4px 9px; }
+
+  /* ===== HABILIDADES ===== */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .skill-group {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s;
+  }
+  .skill-group:hover { border-color: var(--border-strong); }
+  .sg-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .sg-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-dim);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent);
+  }
+  .sg-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .sg-items {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .sg-items .pill {
+    font-size: 13px;
+    padding: 6px 12px;
+    color: var(--text);
+    border-color: var(--border-strong);
+  }
+
+  .soft-skills {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+  }
+  .soft-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    background: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.3s;
+  }
+  .soft-card:hover {
+    border-color: var(--accent);
+    background: rgba(0, 255, 163, 0.03);
+  }
+  .soft-icon {
+    width: 28px; height: 28px;
+    color: var(--accent);
+  }
+  .soft-label {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  /* ===== EXPERIÊNCIA ===== */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    max-width: 820px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: linear-gradient(var(--accent), transparent);
+    opacity: 0.4;
+  }
+  .tl-item {
+    position: relative;
+    padding-bottom: 48px;
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -32px; top: 8px;
+    width: 17px; height: 17px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--accent);
+  }
+  .tl-item::after {
+    content: '';
+    position: absolute;
+    left: -27px; top: 13px;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+  }
+  .tl-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+  .tl-role {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .tl-role .at { color: var(--text-dim); font-weight: 400; }
+  .tl-desc {
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ===== CONTATO ===== */
+  .contact {
+    text-align: left;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    transition: all 0.3s;
+  }
+  .contact-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    background: rgba(0, 255, 163, 0.03);
+  }
+  .contact-icon {
+    width: 40px; height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-dim);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent);
+  }
+  .contact-text { min-width: 0; flex: 1; }
+  .contact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .contact-val {
+    font-size: 14px;
+    color: var(--text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-copy {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-faint);
+  }
+  .footer-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--accent); }
+
+  /* ===== REVEAL ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 860px) {
+    section { padding: 80px 0; }
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .nav-cta .label { display: none; }
+
+    .counters {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .project-featured { padding: 28px; }
+    .project-featured-grid { grid-template-columns: 1fr; gap: 28px; }
+    .project-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .soft-skills { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding-top: 120px; }
+    .section-head { margin-bottom: 40px; }
+  }
+  @media (max-width: 520px) {
+    .soft-skills { grid-template-columns: 1fr; }
+    .hero-ctas .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="logo">Johnnick<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="https://wa.me/5532991447768" target="_blank" rel="noopener" class="nav-cta">
+      <span class="pulse"></span>
+      <span class="label">Falar agora</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="container hero-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span>// FUNDADOR · DESENVOLVEDOR · CEO</span>
+    </div>
+    <h1 class="hero-title"><span id="typed"></span><span class="cursor"></span></h1>
+    <p class="hero-sub">
+      <strong>Desenvolvedor Full Stack. Fundador da TrackPath.</strong><br>
+      Crio sistemas que escalam, produtos que existem por escolha — não por sorte.
+    </p>
+    <div class="hero-ctas">
+      <a href="#projetos" class="btn btn-primary">Ver Projetos ↓</a>
+      <a href="https://trackpath.com.br" target="_blank" rel="noopener" class="btn btn-ghost">TrackPath →</a>
+    </div>
+
+    <div class="counters">
+      <div>
+        <div class="counter-num"><span class="count" data-target="6">0</span><span class="plus">+</span></div>
+        <div class="counter-label">Anos de experiência</div>
+      </div>
+      <div>
+        <div class="counter-num"><span class="count" data-target="20">0</span><span class="plus">+</span></div>
+        <div class="counter-label">Projetos entregues</div>
+      </div>
+      <div>
+        <div class="counter-num"><span class="count" data-target="3">0</span><span class="plus">+</span></div>
+        <div class="counter-label">Anos fundando TrackPath</div>
+      </div>
+      <div>
+        <div class="counter-num"><span class="count" data-target="1">0</span></div>
+        <div class="counter-label">Plataforma construída do zero</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SOBRE ============ -->
+<section id="sobre">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">// SOBRE</span>
+      <h2 class="section-title">Código, produto, <em style="color: var(--accent); font-style: normal">visão</em>.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="about-portrait">
+          <span class="corner tl mono">// jl.portrait</span>
+          <span class="initials">JL</span>
+          <span class="corner br mono">2026</span>
+        </div>
+        <div class="about-badge">
+          <span class="ping"></span>
+          <span>Juiz de Fora, MG · Disponível para projetos</span>
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <p>
+          <strong>Desenvolvedor com formação em Análise e Desenvolvimento de Sistemas.</strong>
+          Fundei e construí do zero a <span class="hl">TrackPath</span> — da arquitetura de backend à gestão de produto. Uma plataforma completa de marketing de afiliados e encurtamento de links, desenvolvida inteiramente por mim.
+        </p>
+        <p>
+          Minha carreira começou no <strong>design gráfico</strong>, passou pela <strong>QA</strong> e chegou ao <strong>desenvolvimento completo de sistemas</strong>. Esse caminho me deu algo raro: visão técnica, olhar criativo e mentalidade de produto.
+        </p>
+        <p>
+          Além do código, tenho expertise em marketing digital, Google Tag Manager, análise de dados e liderança de equipes. Construo tecnologia que funciona — e que <strong>faz sentido para o negócio</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJETOS ============ -->
+<section id="projetos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">// PROJETOS</span>
+      <h2 class="section-title">O que já construí</h2>
+      <p class="section-sub">Projetos reais. Código real. Resultados reais.</p>
+    </div>
+
+    <article class="project-featured reveal">
+      <div class="project-featured-grid">
+        <div>
+          <div class="pf-badge">★ PROJETO PRINCIPAL</div>
+          <h3 class="pf-name">TrackPath<span class="period">.</span></h3>
+          <div class="pf-role">Fundador &amp; CEO · 3+ anos</div>
+          <p class="pf-desc">
+            Plataforma completa de marketing de afiliados e encurtamento de links. Construída inteiramente por mim — da idealização à arquitetura, do backend ao produto. Analytics em tempo real, campanhas, deeplinks, rastreamento de conversões e muito mais. <strong style="color:var(--text)">Talvez a primeira plataforma do tipo 100% desenvolvida no Brasil.</strong>
+          </p>
+          <div class="pf-stack">
+            <span class="pill">Python</span>
+            <span class="pill">FastAPI</span>
+            <span class="pill">AWS</span>
+            <span class="pill">Redis</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Docker</span>
+          </div>
+          <div class="pf-actions">
+            <a href="https://trackpath.com.br" target="_blank" rel="noopener" class="btn btn-primary">Visitar site →</a>
+            <a href="https://lp.trackpath.com.br" target="_blank" rel="noopener" class="btn btn-ghost">Ver LP →</a>
+          </div>
+        </div>
+
+        <div class="pf-visual" aria-hidden="true">
+          <div class="terminal-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="title">trackpath — analytics.live</span>
+          </div>
+          <div class="terminal-body">
+            <div class="tl-line"><span class="c">$</span> <span class="k">trackpath</span> analytics --live</div>
+            <div class="tl-line"><span class="c">→</span> connecting redis stream...</div>
+            <div class="tl-line"><span class="c">→</span> <span class="k">ok</span> conversions up</div>
+            <div class="tl-bar-row">
+              <span>clicks</span>
+              <span class="tl-bar"><span style="width: 86%"></span></span>
+              <span class="mono">12.4k</span>
+            </div>
+            <div class="tl-bar-row">
+              <span>leads</span>
+              <span class="tl-bar"><span style="width: 58%"></span></span>
+              <span class="mono">3.2k</span>
+            </div>
+            <div class="tl-bar-row">
+              <span>sales</span>
+              <span class="tl-bar"><span style="width: 34%"></span></span>
+              <span class="mono">487</span>
+            </div>
+            <div class="tl-line" style="margin-top: 14px"><span class="c">→</span> revenue <span class="s">R$ 128.430</span></div>
+            <div class="tl-line"><span class="c">→</span> status <span class="k">all systems nominal</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="project-grid">
+      <a href="https://servicos.johnnick.com.br" target="_blank" rel="noopener" class="project-card reveal">
+        <div class="pc-num">// project_02</div>
+        <h3 class="pc-name">Serviços — johnnick.com.br</h3>
+        <span class="pc-url">servicos.johnnick.com.br</span>
+        <p class="pc-desc">Site de serviços de criação de sites profissionais, com LP de alta conversão.</p>
+        <div class="pc-stack">
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">SEO</span>
+        </div>
+      </a>
+
+      <a href="https://www.sharkmuaythai.com.br" target="_blank" rel="noopener" class="project-card reveal">
+        <div class="pc-num">// project_03</div>
+        <h3 class="pc-name">Shark Muay Thai</h3>
+        <span class="pc-url">sharkmuaythai.com.br</span>
+        <p class="pc-desc">Site institucional para academia de Muay Thai em Juiz de Fora, com galeria e agendamento.</p>
+        <div class="pc-stack">
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+        </div>
+      </a>
+
+      <a href="https://links.johnnick.com.br" target="_blank" rel="noopener" class="project-card reveal">
+        <div class="pc-num">// project_04</div>
+        <h3 class="pc-name">Página de Links</h3>
+        <span class="pc-url">links.johnnick.com.br</span>
+        <p class="pc-desc">Bio page personalizada com identidade visual própria — alternativa ao Linktree no domínio próprio.</p>
+        <div class="pc-stack">
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">Python</span>
+        </div>
+      </a>
+
+      <a href="https://www.arquitetamarianelandim.com.br" target="_blank" rel="noopener" class="project-card reveal">
+        <div class="pc-num">// project_05</div>
+        <h3 class="pc-name">Arquiteta Mariane Landim</h3>
+        <span class="pc-url">arquitetamarianelandim.com.br</span>
+        <p class="pc-desc">Portfólio premium para arquiteta com galeria de projetos e formulário de contato.</p>
+        <div class="pc-stack">
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HABILIDADES ============ -->
+<section id="habilidades">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">// HABILIDADES</span>
+      <h2 class="section-title">Stack &amp; Ferramentas</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="sg-head">
+          <span class="sg-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </span>
+          <span class="sg-title">Linguagens</span>
+        </div>
+        <div class="sg-items">
+          <span class="pill">Python</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Node.js</span>
+          <span class="pill">Java</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">C#</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="sg-head">
+          <span class="sg-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg>
+          </span>
+          <span class="sg-title">Frameworks</span>
+        </div>
+        <div class="sg-items">
+          <span class="pill">FastAPI</span>
+          <span class="pill">Flask</span>
+          <span class="pill">Django</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="sg-head">
+          <span class="sg-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M12 2v20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07"/></svg>
+          </span>
+          <span class="sg-title">Infraestrutura</span>
+        </div>
+        <div class="sg-items">
+          <span class="pill">AWS</span>
+          <span class="pill">Docker</span>
+          <span class="pill">Redis</span>
+          <span class="pill">CI/CD</span>
+          <span class="pill">TDD</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="sg-head">
+          <span class="sg-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+          </span>
+          <span class="sg-title">Banco de Dados</span>
+        </div>
+        <div class="sg-items">
+          <span class="pill">SQL</span>
+          <span class="pill">NoSQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="sg-head">
+          <span class="sg-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+          </span>
+          <span class="sg-title">Marketing &amp; Analytics</span>
+        </div>
+        <div class="sg-items">
+          <span class="pill">Google Tag Manager</span>
+          <span class="pill">GA4</span>
+          <span class="pill">Pixel</span>
+          <span class="pill">Scripts customizados</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="sg-head">
+          <span class="sg-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </span>
+          <span class="sg-title">Ferramentas</span>
+        </div>
+        <div class="sg-items">
+          <span class="pill">Git</span>
+          <span class="pill">Jira</span>
+          <span class="pill">Postman</span>
+          <span class="pill">Selenium</span>
+          <span class="pill">Scrum</span>
+          <span class="pill">Kanban</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="soft-skills">
+      <div class="soft-card reveal">
+        <svg class="soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        <div class="soft-label">Liderança Técnica</div>
+      </div>
+      <div class="soft-card reveal">
+        <svg class="soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+        <div class="soft-label">Gestão de Produto</div>
+      </div>
+      <div class="soft-card reveal">
+        <svg class="soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/></svg>
+        <div class="soft-label">Visão Estratégica</div>
+      </div>
+      <div class="soft-card reveal">
+        <svg class="soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <div class="soft-label">Comunicação</div>
+      </div>
+      <div class="soft-card reveal">
+        <svg class="soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2a6.5 6.5 0 0 1 4.95 10.72l6.3 6.3a1 1 0 0 1-1.42 1.42l-6.3-6.3A6.5 6.5 0 1 1 9.5 2z"/></svg>
+        <div class="soft-label">Resolução de Problemas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIÊNCIA ============ -->
+<section id="experiencia">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">// EXPERIÊNCIA</span>
+      <h2 class="section-title">Trajetória</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-date">jan/2023 — atual</div>
+        <h3 class="tl-role">Fundador &amp; CEO <span class="at">— TrackPath</span></h3>
+        <p class="tl-desc">
+          TrackPath é uma plataforma de marketing de afiliados construída inteiramente por mim. Arquitetura, desenvolvimento backend, APIs, infra AWS, visão de produto e gestão estratégica — do zero até o produto no ar.
+        </p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-date">atuação contínua</div>
+        <h3 class="tl-role">Engenheiro de Software</h3>
+        <p class="tl-desc">
+          Desenvolvimento de sistemas de ponta a ponta: arquitetura, APIs, integrações, performance e escalabilidade. Foco em código limpo, testes e entrega contínua em produtos reais.
+        </p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-date">em paralelo</div>
+        <h3 class="tl-role">Desenvolvedor &amp; QA <span class="at">— Projetos diversos</span></h3>
+        <p class="tl-desc">
+          Entrega de sites, sistemas e soluções para clientes variados. Do design ao deploy, com foco em qualidade, performance e prazo.
+        </p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-date">início de carreira</div>
+        <h3 class="tl-role">Design Gráfico</h3>
+        <p class="tl-desc">
+          A base criativa que moldou meu olhar para detalhes, identidade visual e experiência do usuário — qualidades que trouxe para o desenvolvimento de software.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section id="contato" class="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">// CONTATO</span>
+      <h2 class="section-title">Vamos construir algo juntos?</h2>
+      <p class="section-sub">Disponível para projetos, parcerias e conversas técnicas.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <a href="https://wa.me/5532991447768" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </span>
+        <div class="contact-text">
+          <div class="contact-label">WhatsApp</div>
+          <div class="contact-val">+55 32 99144-7768</div>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/johnnickjf/" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+        </span>
+        <div class="contact-text">
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-val">/in/johnnickjf</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/johnnickjf" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </span>
+        <div class="contact-text">
+          <div class="contact-label">GitHub</div>
+          <div class="contact-val">@johnnickjf</div>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/johnnickjf/" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
+        </span>
+        <div class="contact-text">
+          <div class="contact-label">Instagram</div>
+          <div class="contact-val">@johnnickjf</div>
+        </div>
+      </a>
+
+      <a href="/cdn-cgi/l/email-protection#284247404646414b43064449464c4145684f45494144064b4745" class="contact-card">
+        <span class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </span>
+        <div class="contact-text">
+          <div class="contact-label">Email</div>
+          <div class="contact-val"><span class="__cf_email__" data-cfemail="a9c3c6c1c7c7c0cac287c5c8c7cdc0c4e9cec4c8c0c587cac6c4">[email&#160;protected]</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <span class="logo" style="font-size: 16px">Johnnick<span class="dot">.</span></span>
+      <span class="footer-copy" style="margin-left: 16px">© 2025 Johnnick Landim. Desenvolvido por mim.</span>
+    </div>
+    <a href="https://trackpath.com.br" target="_blank" rel="noopener" class="footer-link">Feito com TrackPath 🔗</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // === Navbar scroll state ===
+  const navbar = document.getElementById('navbar');
+  const onScroll = () => {
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // === Typing effect ===
+  const typedEl = document.getElementById('typed');
+  const typeText = 'Johnnick Landim.';
+  let i = 0;
+  function type() {
+    if (i <= typeText.length) {
+      const current = typeText.slice(0, i);
+      // Colorize the trailing period
+      if (current.endsWith('.')) {
+        typedEl.innerHTML = current.slice(0, -1) + '<span class="period">.</span>';
+      } else {
+        typedEl.textContent = current;
+      }
+      i++;
+      setTimeout(type, 90);
+    }
+  }
+  setTimeout(type, 300);
+
+  // === Counters ===
+  function animateCount(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1400;
+    const start = performance.now();
+    function step(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(eased * target);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  // === Reveal + Counters via IntersectionObserver ===
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.count').forEach(el => counterObserver.observe(el));
+</script>
+
+</body>
+</html>
